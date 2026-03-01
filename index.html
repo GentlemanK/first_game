@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First 3D Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        canvas {
+            border: 4px solid #fff;
+            background-color: skyblue;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .ui {
+            position: absolute;
+            top: 20px;
+            font-size: 24px;
+            text-shadow: 2px 2px #000;
+        }
+        .instructions {
+            margin-top: 10px;
+            color: #ccc;
+        }
+        #message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            text-align: center;
+            z-index: 10;
+            display: none;
+            text-shadow: 2px 2px #000;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui">3D Obby</div>
+    <div id="message">GAME OVER!<br><span style="font-size: 20px">Press R to Restart</span></div>
+    
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    
+    <div class="instructions">
+        <b>W A S D</b> to Move | <b>SPACE</b> to Jump | <b>Click & Drag</b> to Look Around
+    </div>
+
+    <!-- Load Three.js library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
